@@ -6,7 +6,7 @@ on:
     tags:
       - "v[0-9]*.[0-9]*.[0-9]*"
   workflow_dispatch:        # allow manual runs from the Actions tab
-
+x
 permissions:
   contents: write           # needed to create GitHub Releases
 
@@ -23,10 +23,7 @@ jobs:
           - os: ubuntu-22.04
             artifact_name: empy-linux-x64
             exe_suffix: ""
-          - os: macos-13           # Intel/x64 — last runner guaranteed to be x86_64
-            artifact_name: empy-macos-x64
-            exe_suffix: ""
-          - os: macos-15           # Apple Silicon arm64 (M-series); use macos-14 if 15 unavailable
+          - os: macos-latest       # arm64 (Apple Silicon) — GitHub's current stable macOS runner
             artifact_name: empy-macos-arm64
             exe_suffix: ""
           - os: windows-latest
@@ -164,15 +161,14 @@ jobs:
           echo "### Binaries" >> notes.md
           echo "| Platform | File |" >> notes.md
           echo "|---|---|" >> notes.md
-          echo "| Linux x64   | \`empy-linux-x64\` |" >> notes.md
-          echo "| macOS x64   | \`empy-macos-x64\` |" >> notes.md
-          echo "| macOS arm64 | \`empy-macos-arm64\` |" >> notes.md
-          echo "| Windows x64 | \`empy-windows-x64.exe\` |" >> notes.md
+          echo "| Linux x64        | \`empy-linux-x64\` |" >> notes.md
+          echo "| macOS arm64      | \`empy-macos-arm64\` |" >> notes.md
+          echo "| Windows x64      | \`empy-windows-x64.exe\` |" >> notes.md
           echo "" >> notes.md
           echo "### Quick start" >> notes.md
           echo '```bash' >> notes.md
           echo "# macOS / Linux — make executable first:" >> notes.md
-          echo "chmod +x empy-linux-x64   # or empy-macos-x64 / empy-macos-arm64" >> notes.md
+          echo "chmod +x empy-linux-x64   # or empy-macos-arm64" >> notes.md
           echo "./empy-linux-x64          # opens GUI in browser" >> notes.md
           echo "./empy-linux-x64 encrypt photo.jpg   # CLI encrypt" >> notes.md
           echo "" >> notes.md
@@ -193,7 +189,6 @@ jobs:
           body_path: notes.md
           files: |
             dist/empy-linux-x64
-            dist/empy-macos-x64
             dist/empy-macos-arm64
             dist/empy-windows-x64.exe
             dist/SHA256SUMS.txt
