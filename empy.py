@@ -61,7 +61,7 @@ from cryptography.exceptions import InvalidTag
 MAGIC        = b"EMPY"
 VERSION_V1   = 1     # standard encrypted file
 VERSION_V2   = 2     # peer-sealed (double-encrypted) file
-PROG_VERSION = "3.0.0"
+PROG_VERSION = "3.3.0"
 
 SALT_LEN     = 32
 NONCE_LEN    = 12

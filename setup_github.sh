@@ -20,7 +20,7 @@ set -e
 # ── Configurable ──────────────────────────────────────────────────
 REPO_NAME="empy"
 REPO_DESC="Empyrean Secure Compression — AES-256-GCM encrypted file packaging"
-VERSION="v3.0.0"
+VERSION="v3.3.0"
 # Set to "true" to make the repo private (requires GitHub Pro for private Actions minutes)
 PRIVATE="false"
 # ─────────────────────────────────────────────────────────────────
