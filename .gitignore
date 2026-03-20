@@ -1,0 +1,27 @@
+# Build outputs
+dist/
+build/
+*.empy.build/
+*.empy.dist/
+*.empy.onefile-build/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Test / generated files (do not commit)
+*.empy
+*.empy.pub
+*.empy.key
