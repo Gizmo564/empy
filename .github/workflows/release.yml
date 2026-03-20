@@ -23,10 +23,10 @@ jobs:
           - os: ubuntu-22.04
             artifact_name: empy-linux-x64
             exe_suffix: ""
-          - os: macos-13           # Intel runner (produces universal-capable binary)
+          - os: macos-13           # Intel/x64 — last runner guaranteed to be x86_64
             artifact_name: empy-macos-x64
             exe_suffix: ""
-          - os: macos-14           # Apple Silicon (M-series) runner
+          - os: macos-15           # Apple Silicon arm64 (M-series); use macos-14 if 15 unavailable
             artifact_name: empy-macos-arm64
             exe_suffix: ""
           - os: windows-latest
